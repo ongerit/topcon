@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    ["transform-es2015-block-scoping"],
+    ["transform-es2015-classes", {"loose": true}],
+    ["transform-proto-to-assign"],
+    ["transform-runtime", {"polyfill": false}]
+  ],
+  "presets": ["es2015", "stage-0"]
+}

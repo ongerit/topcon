@@ -1,0 +1,4 @@
+.profile {
+    @include when-wider-than(tablet) {
+    }
+}

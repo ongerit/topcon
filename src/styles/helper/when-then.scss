@@ -1,0 +1,55 @@
+$breakpoints-s: 320;
+$breakpoints-m: 540;
+$breakpoints-l: 960;
+$breakpoints-xl: 1280;
+$breakpoints-xxl: 1600;
+$breakpoints: ( mobile: $breakpoints-s * 1px, tablet: $breakpoints-m * 1px, small_desktop: $breakpoints-l * 1px, large_desktop: $breakpoints-xl * 1px, xlarge_desktop: $breakpoints-xxl * 1px );
+$there-is-no-higher-breakpoint: 9999em;
+$allowed-breakpoint-targets: inspect(map-keys($breakpoints));
+
+@function get-breakpoint($target) {
+    $breakpoint: map-get($breakpoints, $target);
+
+    @if $breakpoint == null {
+        @warn("You tried to respond_to '#{$target}'. Please use one of these available breakpoints - #{$allowed-breakpoint-targets}");
+    }
+
+    @return $breakpoint;
+}
+
+@function get-next-breakpoint($target) {
+    $possible-nexts: ();
+    $next-breakpoint: null;
+
+    @each $breakpoint, $value in $breakpoints {
+        @if $breakpoint == $target or length($possible-nexts) > 0 {
+            $possible-nexts: append($possible-nexts, $breakpoint);
+        }
+    }
+
+    @if length($possible-nexts) > 1 {
+        $next-breakpoint: nth($possible-nexts, 2);
+
+        @return map-get($breakpoints, $next-breakpoint);
+    }
+
+    @return $there-is-no-higher-breakpoint;
+}
+
+@mixin when-wider-than($target) {
+    @media all and (min-width: get-breakpoint($target)) {
+        @content;
+    }
+}
+
+@mixin when-less-than($target) {
+    @media all and (max-width: get-breakpoint($target) - 1) {
+        @content;
+    }
+}
+
+@mixin when-on($target) {
+    @media all and (min-width: get-breakpoint($target)) and (max-width: get-next-breakpoint($target) - 1) {
+        @content;
+    }
+}

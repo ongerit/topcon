@@ -1,0 +1,12 @@
+{
+    "extends": "stylelint-config-standard",
+        "rules": {
+            "color-hex-case": "upper",
+            "color-hex-length": "long",
+            "declaration-empty-line-before": "never",
+            "declaration-block-no-redundant-longhand-properties": [true, {"ignoreShorthands": ["bg", "font", "transition"]}],
+            "indentation": 4,
+            "number-leading-zero": "never",
+            "color-named": "never"
+        }
+}

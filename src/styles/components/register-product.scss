@@ -1,0 +1,19 @@
+.register-product {
+    padding: 15px 20px;
+    background: $white;
+    border-top: 1px solid $gray-3;
+    box-shadow: 0 0 8px 0 rgba($black,0.24);
+    position: fixed;
+    max-width: 304px;
+    width: 100%;
+    bottom: 0;
+    z-index: $register-product-index;
+
+    button {
+        @extend %primary-button;
+        margin-bottom: 10px;
+    }
+
+    @include when-wider-than(tablet) {
+    }
+}

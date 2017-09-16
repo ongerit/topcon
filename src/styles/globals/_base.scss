@@ -1,0 +1,68 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: rem(14px);
+    font-weight: 400;
+    // scss-lint:disable VendorPrefix
+    -webkit-font-smoothing: antialiased;
+    // scss-lint:enable VendorPrefix
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    @extend %body;
+    margin: 0 0 20px;
+}
+
+ul,
+ol,
+li,
+dl,
+dt,
+dd, {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+picture {
+    display: block;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    @extend %link;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+input::-ms-clear {
+    display: none;
+}

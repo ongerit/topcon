@@ -1,0 +1,45 @@
+.subscriptions {
+    position: relative;
+    margin-bottom: 140px;
+
+
+    &__wrapper {
+        z-index: $subscriptions-index;
+        overflow: scroll;
+        position: absolute;
+        max-width: 304px;
+        width: 100%;
+    }
+
+    h3 {
+        color: $gray;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+
+    &__grid {
+        padding: 15px 20px;
+    }
+
+    &__active {
+        background: $gray-3;
+        border-left: 7px solid $blue;
+    }
+
+    &__menu {
+        font-weight: bold;
+        padding: 13px 25px;
+        color: $gray;
+    }
+
+    &__cat {
+        li {
+            @extend %body;
+            padding: 13px 25px;
+            border-bottom: 1px solid $gray-3;
+        }
+    }
+
+    @include when-wider-than(tablet) {
+    }
+}
