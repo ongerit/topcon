@@ -47,30 +47,3 @@ Templates and partials follow the traditional ejs syntax. Partials can be refere
 <h2><%= this.page1.subtitle %></h2>
 
 <% include header %>
-```
-
-### Webpack
-There's a minimal amount of modification that needs to be done to the [**`webpack.config.js`**](./webpack.config.js).
-
-First, make sure to [**import your data object**](https://github.com/codeandtheory/frontend-toolkit/blob/master/boilerplate/webpack-ejs/webpack.config.js#L7):
-```javascript
-    var templateData = require('./data/data');
-```
-
-Then add the [**loader rule for .ejs files**](https://github.com/codeandtheory/frontend-toolkit/blob/master/boilerplate/webpack-ejs/webpack.config.js#L25). This will go through the file-loader as well to output actual html files:
-```javascript
-    {
-        test: /\.ejs/,
-        use: [
-            { loader: 'file-loader?name=[name].html' },
-            { loader: 'ejs-html-loader' }
-        ]
-    }
-```
-
-Finally, point the `context` option to the object you set up in [** webpack's LoaderOptionPlugins section**](https://github.com/codeandtheory/frontend-toolkit/blob/master/boilerplate/webpack-ejs/webpack.config.js#L90). This will assign `this` in all of your templates and partials to that object.
-```javascript
-    ejsHtml: {
-        context: templateData
-    }
-```
