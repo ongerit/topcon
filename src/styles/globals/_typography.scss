@@ -14,6 +14,20 @@
     color: $blue;
 }
 
+%header-3 {
+    color: $gray;
+    font-size: 15px;
+    padding-bottom: 11px;
+}
+
+%grid {
+    padding: 20px;
+
+    @include when-wider-than(large_desktop) {
+        padding: 20px 22px;
+    }
+}
+
 %primary-navigation {
     font-family: 'Proxima Nova Cn Lt';
     color: $white;

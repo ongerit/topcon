@@ -1,7 +1,10 @@
-# Webpack with EJS templating
-This example builds off of the [**webpack example**](/boilerplate/webpack) and layers on ejs templating functionality. All other aspects of this build are the same. This uses the webpack [**`ejs-html-loader`**](https://github.com/mcmath/ejs-html-loader) to process templates and partials with webpack, and will build out all html files into `/dist`
-
-## Template Workflow
+## Running
+* **`yarn install`** - install all necessary packages
+* **`yarn dev`** - watch and recompile on change (does not watch `/data` directory. so any changes to your data file will require restarting webpack)
+* **`yarn prod`** - build out files for prod
+* **`yarn _purge`** - cleans out dist folder
+* **`yarn _copy-static`** - copies static assets to dist folder
+* **`yarn _start-server`** - runs the development server
 
 ### Data
 Data is laid out in the [**`data/data.js`**](./data/data.js) file as an object. Properties can be nested as you see fit. For example:
@@ -71,9 +74,3 @@ Finally, point the `context` option to the object you set up in [** webpack's Lo
         context: templateData
     }
 ```
-
-## Running
-* **`yarn install`** - install all necessary packages
-* **`yarn dev`** - watch and recompile on change (does not watch `/data` directory. so any changes to your data file will require restarting webpack)
-* **`yarn prod`** - build out files for prod
-

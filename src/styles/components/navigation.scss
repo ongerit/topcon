@@ -1,10 +1,11 @@
 .navigation {
     position: relative;
-    height: 42px;
     z-index: $navigation-index;
+    height: 42px;
 
     &__wrapper {
         background: $blue;
+        height: 42px;
         display: flex;
         position: fixed;
         width: 100%;
@@ -13,7 +14,6 @@
         padding: 11px 14px;
         justify-content: space-between;
     }
-
 
     li,
     p,
@@ -52,13 +52,16 @@
         border: 2px solid $white;
         width: 36px;
         height: 36px;
-        // display: none;
     }
 
     &__logged {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
+        display: none;
+
+        li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
 
         span {
             margin-right: 16px;
@@ -73,6 +76,10 @@
         &__dealer,
         &__sign-up {
             display: inline-block;
+        }
+
+        &__wrapper {
+            height: 60px;
         }
 
         &__settings {
@@ -101,6 +108,17 @@
             border-right: 1px solid $white;
             border-left: 1px solid $white;
             padding: 0 10px;
+        }
+    }
+    // [TO] Display login menu after user has logged on.
+
+    .authenticated & {
+        .navigation__settings {
+            display: none;
+        }
+
+        .navigation__logged {
+            display: block;
         }
     }
 }

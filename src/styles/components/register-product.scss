@@ -2,7 +2,7 @@
     padding: 15px 20px;
     background: $white;
     border-top: 1px solid $gray-3;
-    box-shadow: 0 0 8px 0 rgba($black,0.24);
+    box-shadow: 0 0 8px 0 rgba($black, .24);
     position: fixed;
     max-width: 304px;
     width: 100%;
@@ -12,8 +12,6 @@
     button {
         @extend %primary-button;
         margin-bottom: 10px;
-    }
-
-    @include when-wider-than(tablet) {
+        cursor: pointer;
     }
 }

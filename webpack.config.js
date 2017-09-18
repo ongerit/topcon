@@ -3,22 +3,20 @@ var webpack = require('webpack');
 var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var StyleLintPlugin = require('stylelint-webpack-plugin');
-var srcDir = path.resolve(__dirname, '..', 'src')
 
 var templateData = require('./data/data');
 
 module.exports = {
     devtool: 'cheap-source-map', // the best source map for dev. may want to change for production, or remove
     entry: {
-        app: "./src" // our global entry point. Feel free to add more here.
+        global: './src/', // our global entry point. Feel free to add more here.
+        app: './src/app.js' // our global entry point. Feel free to add more here.
+
     },
     output: {
-        // path: path.join(__dirname, "dist"), // output into /dist
-        // filename: "[name].bundle.js",
-        // chunkFilename: "[id].chunk.js",
-        // publicPath: '/'
-        filename: 'js/[name].js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.join(__dirname, "dist"), // output into /dist
+        filename: "[name].bundle.js",
+        chunkFilename: "[id].chunk.js"
     },
     node: {
         Buffer: false // this helps with stylelint
@@ -91,9 +89,12 @@ module.exports = {
         ]
     },
     plugins: [
+        new webpack.ProvidePlugin({ // [TO] expose jquery to all modules
+            $: 'jquery'
+        }),
         new ExtractTextPlugin("[name].css"), // extract css into a separate file
         new CommonsChunkPlugin({ // pull out common chunks into separate bundles
-            filename: "common.js",
+            filename: "app.js",
             name: "app"
         }),
         new StyleLintPlugin({ // stylelint configuration
