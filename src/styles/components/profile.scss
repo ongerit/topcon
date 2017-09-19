@@ -1,13 +1,15 @@
 .profile {
     display: none;
+    position: relative;
 
     .show-profile & {
         display: block;
     }
 
     &__wrapper {
-        position: absolute;
+        @extend %navigation-height;
         z-index: $profile-index;
+        position: absolute;
         background: $white;
         right: 0;
         overflow: scroll;
@@ -15,7 +17,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100%;
+        height: auto;
 
         > p {
             @extend %grid;
@@ -52,6 +54,13 @@
     }
 
     &--orange-text {
-        color: $orange;
+        color: $orange !important;
+    }
+
+    @include when-wider-than(tablet) {
+        &__wrapper {
+            max-width: 358px;
+            height: auto;
+        }
     }
 }

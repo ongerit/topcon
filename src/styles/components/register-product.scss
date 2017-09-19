@@ -8,10 +8,15 @@
     width: 100%;
     bottom: 0;
     z-index: $register-product-index;
+    box-sizing: border-box;
 
     button {
         @extend %primary-button;
         margin-bottom: 10px;
         cursor: pointer;
+    }
+
+    @include when-wider-than(tablet) {
+        max-width: 326px;
     }
 }

@@ -4,41 +4,46 @@ class Navigation {
     constructor(domElement) {
         this.$component = domElement;
         this.$body = $('body');
-        this.$navigationlogIn = this.$component.find('.navigation__log-in')[0];
-        this.$navigationLogged = this.$component.find('.navigation__logged')[0];
+        this.$navigationlogIn = this.$component.find('.menu__log-in');
+        this.$navigationLogged = this.$component.find('.menu__logged');
+        this.$navigationApp = this.$component.find('.menu__app');
+        this.$subscriptions = this.$component.find('.subscriptions');
+        this.$profile = this.$component.find('.profile');
 
-        this.$navigationApp = this.$body.find('.navigation__app')[0];
-
-
-        this.$subscriptions = this.$body.find('.subscriptions')[0];
-        this.$profile = this.$body.find('.profile')[0];
-
+        // [TO] - Initialize functions
         this.init();
     }
 
     init() {
-        console.log(this.$logIn);
         this.authenticateUser();
         this.toggleMenu();
     }
 
     authenticateUser() {
         $(this.$navigationlogIn).on('click', () => {
-            this.$body.addClass('authenticated');
+            console.log(this.$component);
+            this.$component.addClass('authenticated');
         });
-
     }
 
     toggleMenu() {
         $(this.$navigationApp).on('click', () => {
-            this.$body.addClass('show-subscription');
+            if (this.$component.hasClass('show-subscription') || this.$component.hasClass('show-profile')) {
+                this.$component.removeClass('show-subscription show-profile');
+                return;
+            }
+            this.$component.addClass('show-subscription');
+            this.$body.css('overflow', 'hidden');
         });
 
         $(this.$navigationLogged).on('click', () => {
-            this.$body.addClass('show-profile');
+            if (this.$component.hasClass('show-subscription') || this.$component.hasClass('show-profile')) {
+                this.$component.removeClass('show-profile show-subscription');
+                return;
+            }
+            this.$component.addClass('show-profile');
         });
     }
-
 }
 
 export default Navigation;

@@ -63,7 +63,8 @@
     "eslintConfig": {
         "env": {
           "browser": true,
-          "jquery": true
+          "jquery": true,
+          "no-console": true
         }
     }
 }
