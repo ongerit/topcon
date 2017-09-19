@@ -14,8 +14,7 @@
         z-index: $subscriptions-index;
         background: $white;
         position: absolute;
-        margin-bottom: 160px;
-        overflow: visible;
+        overflow: scroll;
         max-width: 304px;
         width: 100%;
         height: auto;
