@@ -38,8 +38,8 @@
     &__grid {
         @extend %grid;
 
-        p,
-        h3 {
+        h3,
+        p {
             line-height: 36px;
             margin: 0;
         }

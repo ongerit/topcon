@@ -23,6 +23,7 @@
     "brace-style": ["error", "stroustrup"],
     "eol-last": "off",
     "max-len": "off",
+    "no-console": "off",
     "no-plusplus": "off",
     "no-underscore-dangle": "off",
     "one-var": "off",

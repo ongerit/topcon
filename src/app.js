@@ -4,12 +4,11 @@ import './app.scss';
 // Components
 import Navigation from './scripts/components/navigation';
 
-
 function initializeComponents() {
     let domElement = null;
     let component = null;
 
-    $('.navigation').each(function() {
+    $('.navigation').each( () => {
         domElement = $(this);
         component = new Navigation(domElement);
     });
