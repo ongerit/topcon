@@ -1,0 +1,119 @@
+.menu {
+    &__wrapper {
+        z-index: $navigation-index;
+        background: $blue;
+        height: 42px;
+        display: flex;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        align-items: center;
+        padding: 0 14px;
+        justify-content: space-between;
+
+        li,
+        p,
+        span {
+            @extend %primary-navigation;
+            color: $white;
+            cursor: pointer;
+        }
+    }
+
+    &__logo {
+        height: 25px;
+        width: 150px;
+    }
+
+    &__icon {
+        height: 16px;
+        width: 16px;
+        margin-right: 10px;
+    }
+
+    &__app span,
+    &__dealer,
+    &__settings span,
+    &__sign-up {
+        display: none;
+    }
+
+    &__app {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__profile-user {
+        border-radius: 50%;
+        border: 2px solid $white;
+        width: 36px;
+        height: 36px;
+    }
+
+    &__logged {
+        display: none;
+
+        li {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        span {
+            margin-right: 16px;
+        }
+    }
+
+    @include when-wider-than(tablet) {
+        &__app span,
+        &__dealer,
+        &__settings span,
+        &__sign-up {
+            display: inline-block;
+        }
+
+        &__wrapper {
+            height: 60px;
+        }
+
+        &__settings {
+            display: flex;
+
+            ul {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+            }
+
+            li {
+                display: flex;
+
+                &:nth-child(-n+2) {
+                    padding-right: 10px;
+                }
+            }
+        }
+
+        &__log-in {
+            padding-left: 10px;
+        }
+
+        &__sign-up {
+            border-right: 1px solid $white;
+            border-left: 1px solid $white;
+            padding: 0 10px;
+        }
+    }
+
+    // [TO] Display login menu after user has logged on.
+    .authenticated & {
+        .menu__settings {
+            display: none;
+        }
+
+        .menu__logged {
+            display: block;
+        }
+    }
+}

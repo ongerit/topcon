@@ -1,13 +1,14 @@
 .profile {
-    display: none;
+    display: block;
+    right: -400px;
     position: relative;
+    transition: .5s right ease;
 
     .show-profile & {
-        display: block;
+        @include open-drawer(inherit, 0);
     }
 
     &__wrapper {
-        @extend %navigation-height;
         z-index: $profile-index;
         position: absolute;
         background: $white;

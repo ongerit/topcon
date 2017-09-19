@@ -1,0 +1,5 @@
+@mixin open-drawer($left: inherit, $right : inherit) {
+    left: $left;
+    right: $right;
+    transition: .5s all ease;
+}

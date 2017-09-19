@@ -7,7 +7,7 @@ body {
 %navigation-height {
     margin-top: 42px;
 
-    @include when-wider-than(large_desktop) {
+    @include when-wider-than(tablet) {
         margin-top: 60px;
     }
 }

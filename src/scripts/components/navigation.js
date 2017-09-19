@@ -4,9 +4,9 @@ class Navigation {
     constructor(domElement) {
         this.$component = domElement;
         this.$body = $('body');
-        this.$navigationlogIn = this.$component.find('.menu__log-in');
-        this.$navigationLogged = this.$component.find('.menu__logged');
-        this.$navigationApp = this.$component.find('.menu__app');
+        this.$menulogIn = this.$component.find('.menu__log-in');
+        this.$menuLogged = this.$component.find('.menu__logged');
+        this.$menuApp = this.$component.find('.menu__app');
         this.$subscriptions = this.$component.find('.subscriptions');
         this.$profile = this.$component.find('.profile');
 
@@ -20,14 +20,14 @@ class Navigation {
     }
 
     authenticateUser() {
-        $(this.$navigationlogIn).on('click', () => {
+        $(this.$menulogIn).on('click', () => {
             console.log(this.$component);
             this.$component.addClass('authenticated');
         });
     }
 
     toggleMenu() {
-        $(this.$navigationApp).on('click', () => {
+        $(this.$menuApp).on('click', () => {
             if (this.$component.hasClass('show-subscription') || this.$component.hasClass('show-profile')) {
                 this.$component.removeClass('show-subscription show-profile');
                 return;
@@ -36,7 +36,7 @@ class Navigation {
             this.$body.css('overflow', 'hidden');
         });
 
-        $(this.$navigationLogged).on('click', () => {
+        $(this.$menuLogged).on('click', () => {
             if (this.$component.hasClass('show-subscription') || this.$component.hasClass('show-profile')) {
                 this.$component.removeClass('show-profile show-subscription');
                 return;
