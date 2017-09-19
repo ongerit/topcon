@@ -31,9 +31,17 @@
         margin-right: 10px;
     }
 
-    &__app span,
+    &__close {
+        height: 16px;
+        width: 16px;
+        cursor: pointer;
+        display: none;
+    }
+
     &__dealer,
+    &__app span,
     &__settings span,
+    &__logged span,
     &__sign-up {
         display: none;
     }
@@ -42,6 +50,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        cursor: pointer;
     }
 
     &__profile-user {
@@ -66,9 +75,10 @@
     }
 
     @include when-wider-than(tablet) {
-        &__app span,
         &__dealer,
+        &__app span,
         &__settings span,
+        &__logged span,
         &__sign-up {
             display: inline-block;
         }
@@ -113,6 +123,32 @@
 
         .menu__logged {
             display: block;
+        }
+    }
+
+    .show-profile & {
+        .menu__close {
+            display: block;
+        }
+
+        .menu__logged,
+        .menu__settings {
+            display: none;
+        }
+    }
+
+    .show-subscription .ismobile & {
+        .menu__app {
+            visibility: hidden;
+        }
+
+        .menu__close {
+            display: block;
+        }
+
+        .menu__logged,
+        .menu__settings {
+            display: none;
         }
     }
 }

@@ -8,7 +8,7 @@ function initializeComponents() {
     let domElement = null;
     let component = null;
 
-    $('.navigation').each( () => {
+    $('.navigation').each(function() {
         domElement = $(this);
         component = new Navigation(domElement);
     });

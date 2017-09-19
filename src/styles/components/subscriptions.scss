@@ -42,6 +42,10 @@
     }
 
     &__cat {
+        ul {
+            padding: 0;
+        }
+
         li {
             @extend %body;
             padding: 13px 25px;

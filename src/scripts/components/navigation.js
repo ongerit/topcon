@@ -1,4 +1,5 @@
 import $ from 'jquery';
+import { isMobile } from '../helper/ismobile';
 
 class Navigation {
     constructor(domElement) {
@@ -7,6 +8,7 @@ class Navigation {
         this.$menulogIn = this.$component.find('.menu__log-in');
         this.$menuLogged = this.$component.find('.menu__logged');
         this.$menuApp = this.$component.find('.menu__app');
+        this.$menuClose = this.$component.find('.menu__close');
         this.$subscriptions = this.$component.find('.subscriptions');
         this.$profile = this.$component.find('.profile');
 
@@ -15,8 +17,13 @@ class Navigation {
     }
 
     init() {
+        this.detectMobile()
         this.authenticateUser();
         this.toggleMenu();
+    }
+
+    detectMobile() {
+        return isMobile() ? this.$component.addClass('ismobile') : false;
     }
 
     authenticateUser() {
@@ -25,6 +32,7 @@ class Navigation {
             this.$component.addClass('authenticated');
         });
     }
+
 
     toggleMenu() {
         $(this.$menuApp).on('click', () => {
@@ -42,6 +50,10 @@ class Navigation {
                 return;
             }
             this.$component.addClass('show-profile');
+        });
+
+        $(this.$menuClose).on('click', () => {
+            this.$component.removeClass('show-subscription show-profile');
         });
     }
 }
