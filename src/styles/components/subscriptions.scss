@@ -15,10 +15,19 @@
         background: $white;
         position: absolute;
         margin-bottom: 160px;
-        overflow: scroll;
+        overflow: visible;
         max-width: 304px;
         width: 100%;
         height: auto;
+
+        &::after {
+            content: '';
+            background: $white;
+            height: 160px;
+            width: 304px;
+            position: absolute;
+            bottom: -160px;
+        }
 
         h3 {
             @extend %header-3;
@@ -50,12 +59,21 @@
             @extend %body;
             padding: 13px 25px;
             border-bottom: 1px solid $gray-3;
+
+            &:hover {
+                cursor: pointer;
+                background: $gray-2;
+            }
         }
     }
 
     @include when-wider-than(tablet) {
         &__wrapper {
             max-width: 326px;
+
+            &::after {
+                width: 326px;
+            }
         }
     }
 }

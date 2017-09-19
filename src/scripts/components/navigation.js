@@ -38,16 +38,14 @@ class Navigation {
         $(this.$menuApp).on('click', () => {
             if (this.$component.hasClass('show-subscription') || this.$component.hasClass('show-profile')) {
                 this.$component.removeClass('show-subscription show-profile');
-                return;
             }
             this.$component.addClass('show-subscription');
-            this.$body.css('overflow', 'hidden');
+            // this.$body.css('overflow', 'hidden');
         });
 
         $(this.$menuLogged).on('click', () => {
             if (this.$component.hasClass('show-subscription') || this.$component.hasClass('show-profile')) {
                 this.$component.removeClass('show-profile show-subscription');
-                return;
             }
             this.$component.addClass('show-profile');
         });

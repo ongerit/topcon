@@ -25,17 +25,28 @@
         width: 150px;
     }
 
+    &__controls {
+        min-width: 70px;
+        width: 15%;
+
+        ul {
+            padding: 0;
+        }
+    }
+
     &__icon {
         height: 16px;
         width: 16px;
         margin-right: 10px;
+        float: right;
     }
 
     &__close {
+        cursor: pointer;
         height: 16px;
         width: 16px;
-        cursor: pointer;
         display: none;
+        float: right;
     }
 
     &__dealer,
@@ -47,10 +58,10 @@
     }
 
     &__app {
+        cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        cursor: pointer;
     }
 
     &__profile-user {
@@ -62,6 +73,7 @@
 
     &__logged {
         display: none;
+        float: right;
 
         li {
             display: flex;
@@ -87,6 +99,11 @@
             height: 60px;
         }
 
+        &__controls {
+            max-width: 284px;
+            width: 32%;
+        }
+
         &__settings {
             display: flex;
 
@@ -98,15 +115,8 @@
 
             li {
                 display: flex;
-
-                &:nth-child(-n+2) {
-                    padding-right: 10px;
-                }
+                padding: 0 10px;
             }
-        }
-
-        &__log-in {
-            padding-left: 10px;
         }
 
         &__sign-up {
