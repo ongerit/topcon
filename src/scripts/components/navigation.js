@@ -17,7 +17,7 @@ class Navigation {
     }
 
     init() {
-        this.detectMobile()
+        this.detectMobile();
         this.authenticateUser();
         this.toggleMenu();
     }
