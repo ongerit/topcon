@@ -13,11 +13,12 @@
     &__wrapper {
         z-index: $subscriptions-index;
         background: $white;
-        position: absolute;
+        position: fixed;
         overflow: scroll;
         max-width: 304px;
+        margin-bottom: 160px;
         width: 100%;
-        height: auto;
+        height: 100vh;
 
         &::after {
             content: '';

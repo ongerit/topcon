@@ -4,7 +4,7 @@
         background: $blue;
         height: 42px;
         display: flex;
-        position: fixed;
+        position: relative;
         width: 100%;
         top: 0;
         align-items: center;
@@ -21,13 +21,16 @@
     }
 
     &__logo {
-        height: 25px;
-        width: 150px;
+        width: calc(1 / 3 * 100%);
+
+        img {
+            height: 25px;
+            width: 150px;
+        }
     }
 
     &__controls {
-        min-width: 70px;
-        width: 15%;
+        width: calc(1 / 3 * 100%);
 
         ul {
             padding: 0;
@@ -59,8 +62,8 @@
 
     &__app {
         cursor: pointer;
+        width: calc(1 / 3 * 100%);
         display: flex;
-        justify-content: space-between;
         align-items: center;
     }
 
@@ -101,7 +104,6 @@
 
         &__controls {
             max-width: 284px;
-            width: 32%;
         }
 
         &__settings {

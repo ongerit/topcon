@@ -36,22 +36,40 @@ class Navigation {
 
     toggleMenu() {
         $(this.$menuApp).on('click', () => {
-            if (this.$component.hasClass('show-subscription') || this.$component.hasClass('show-profile')) {
-                this.$component.removeClass('show-subscription show-profile');
+            if (this.$component.hasClass('show-subscription')) {
+                this.$component.removeClass('show-subscription');
+                // this.$body.css('overflow', 'inherit');
+                return;
             }
+
+            if (this.$component.hasClass('show-profile')) {
+                this.$component.removeClass('show-profile');
+                // this.$body.css('overflow', 'inherit');
+            }
+
             this.$component.addClass('show-subscription');
             // this.$body.css('overflow', 'hidden');
         });
 
         $(this.$menuLogged).on('click', () => {
-            if (this.$component.hasClass('show-subscription') || this.$component.hasClass('show-profile')) {
-                this.$component.removeClass('show-profile show-subscription');
+            if (this.$component.hasClass('show-profile')) {
+                this.$component.removeClass('show-profile');
+                // this.$body.css('overflow', 'inherit');
+                return;
             }
+
+            if (this.$component.hasClass('show-subscription')) {
+                this.$component.removeClass('show-subscription');
+                // this.$body.css('overflow', 'inherit');
+            }
+
             this.$component.addClass('show-profile');
+            // this.$body.css('overflow', 'hidden');
         });
 
         $(this.$menuClose).on('click', () => {
             this.$component.removeClass('show-subscription show-profile');
+            // this.$body.css('overflow', 'inherit');
         });
     }
 }

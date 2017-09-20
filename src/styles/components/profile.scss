@@ -10,15 +10,15 @@
 
     &__wrapper {
         z-index: $profile-index;
-        position: absolute;
+        position: fixed;
         background: $white;
-        right: 0;
+        right: -400px;
         overflow: scroll;
         max-width: 304px;
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: auto;
+        height: 100vh;
 
         > p {
             @extend %grid;
@@ -33,6 +33,12 @@
                 border-bottom: 1px solid $gray-3;
             }
         }
+    }
+
+    .show-profile & {
+      .profile__wrapper {
+        @include open-drawer(inherit, 0);
+      }
     }
 
     &__grid {
