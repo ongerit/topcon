@@ -36,9 +36,9 @@
     }
 
     .show-profile & {
-      .profile__wrapper {
-        @include open-drawer(inherit, 0);
-      }
+        .profile__wrapper {
+            @include open-drawer(inherit, 0);
+        }
     }
 
     &__grid {
