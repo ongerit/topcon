@@ -1,18 +1,29 @@
 .profile {
     display: block;
-    right: -400px;
     position: relative;
 
-    .show-profile & {
-        @include open-drawer(inherit, 0);
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        width: 0;
+        height: 0;
+        border-bottom: solid 50px $white;
+        border-right: solid 50px transparent;
+        border-left: solid 50px transparent;
     }
 
     &__wrapper {
         z-index: $profile-index;
-        transition: .5s right ease;
+        right: 0;
+        top: -500px;
+        opacity: 0;
+        transition: .5s all ease;
         position: fixed;
         background: $white;
-        right: -400px;
         overflow: scroll;
         max-width: 304px;
         display: flex;
@@ -37,7 +48,7 @@
 
     .show-profile & {
         .profile__wrapper {
-            @include open-drawer(inherit, 0);
+            @include drop-down-drawer();
         }
     }
 

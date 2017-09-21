@@ -5,11 +5,11 @@
             <h3><%= this %></h3>
         </div>
         <div class="subscriptions__cat">
-            <%= this.subscriptions %>
+            <%= this.category %>
             <h4 class="subscriptions__menu subscriptions__active">myTopcon</h4>
             <ul>
             <% for(var i=0; i < this.subscriptions[0].menu.length; i++) {%>
-                <li><a href=<%= this.subscriptions[0].menu[i].link %>><%= this.subscriptions[0].menu[i].name %></li>
+                <li><a ><%= this.subscriptions[0].menu[i].name %></li>
             <% } %>
                 <li>Topnet Live</li>
                 <li>MAGNET Enterprise</li>

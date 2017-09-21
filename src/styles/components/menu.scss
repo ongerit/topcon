@@ -77,6 +77,16 @@
         height: 36px;
     }
 
+    &__user {
+        span {
+            @extend %alert;
+            display: none;
+            position: absolute;
+            top: 8px;
+            right: -10px;
+        }
+    }
+
     &__logged {
         display: none;
         float: right;
@@ -128,6 +138,12 @@
             border-right: 1px solid $white;
             border-left: 1px solid $white;
             padding: 0 10px;
+        }
+
+        &__user {
+            span {
+                display: block;
+            }
         }
     }
     // [TO] Display login menu after user has logged on.
