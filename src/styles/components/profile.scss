@@ -2,7 +2,6 @@
     display: block;
     right: -400px;
     position: relative;
-    transition: .5s right ease;
 
     .show-profile & {
         @include open-drawer(inherit, 0);
@@ -10,6 +9,7 @@
 
     &__wrapper {
         z-index: $profile-index;
+        transition: .5s right ease;
         position: fixed;
         background: $white;
         right: -400px;

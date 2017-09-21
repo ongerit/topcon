@@ -1,12 +1,53 @@
 // set up data here.
 // this can be nested multiple levels deep if necessary.
 var data = {
-    page1: {
-        title: 'page1title',
-        subtitle: 'this is the subtitle'
-    },
-    headerText: 'this is the header text',
-    footerText: 'this is the footer'
+    'subscriptions': [
+        {
+            'active': true,
+            'name': 'myTopcon',
+            'menu': [
+                {
+                    name: 'Topnet Live',
+                    link: 'https://google.com'
+                },
+                {
+                    name: 'Topnet Live',
+                    link: 'https://google.com'
+                },
+                {
+                    name: 'Topnet Live',
+                    link: 'https://google.com'
+                },
+                {
+                    name: 'Topnet Live',
+                    link: 'https://google.com'
+                },
+                {
+                    name: 'Topnet Live',
+                    link: 'https://google.com'
+                }
+            ]
+        }, {
+            'active': true,
+            'name': 'PRODUCTS AND SERVICES',
+            'menu': [
+                {
+                    'Topnet Live': 'https://google.com'
+                }, {
+                    'Topnet Live': 'https://google.com'
+                }, {
+                    'Topnet Live': 'https://google.com'
+                }, {
+                    'Topnet Live': 'https://google.com'
+                }, {
+                    'Topnet Live': 'https://google.com'
+                }, {
+                    'Topnet Live': 'https://google.com'
+                }
+            ]
+        }
+    ]
 }
+
 
 module.exports = data;

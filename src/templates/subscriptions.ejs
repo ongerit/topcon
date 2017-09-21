@@ -2,11 +2,15 @@
     <div class="subscriptions__wrapper">
         <div class="subscriptions__grid">
             <p>Have an account? <a>Log in</a> for a full list of your Topcon apps and services here.</p>
-            <h3>Subscriptions</h3>
+            <h3><%= this %></h3>
         </div>
         <div class="subscriptions__cat">
+            <%= this.subscriptions %>
             <h4 class="subscriptions__menu subscriptions__active">myTopcon</h4>
             <ul>
+            <% for(var i=0; i < this.subscriptions[0].menu.length; i++) {%>
+                <li><a href=<%= this.subscriptions[0].menu[i].link %>><%= this.subscriptions[0].menu[i].name %></li>
+            <% } %>
                 <li>Topnet Live</li>
                 <li>MAGNET Enterprise</li>
                 <li>Sitelink3D</li>

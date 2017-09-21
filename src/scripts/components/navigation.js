@@ -78,10 +78,10 @@ class Navigation {
 
     backgroundRemovesMenu() {
         $(this.$body).on('click', (el) => {
-            el.stopPropagation();
-
-            console.log('backgground');
-            // this.$component.removeClass('show-subscription show-profile');
+            if (el.target.localName !== 'body') {
+                return;
+            }
+            this.$component.removeClass('show-subscription show-profile');
         });
     }
 }
