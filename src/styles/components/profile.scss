@@ -50,8 +50,9 @@
 
     .show-profile & {
         &::before {
-          display: block;
+            display: block;
         }
+
         .profile__wrapper {
             @include drop-down-drawer();
         }
