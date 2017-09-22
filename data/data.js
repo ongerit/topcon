@@ -1,56 +1,66 @@
 // set up data here.
 // this can be nested multiple levels deep if necessary.
 var data = {
-    'category': 'subscriptions'.
-    'subscriptions': [
+    category: 'subscriptions',
+    subscriptions: [
         {
             'active': true,
             'name': 'myTopcon',
             'menu': [
                 {
                     name: 'Topnet Live',
-                    link: 'https://google.com'
+                    link: 'https://example.com',
+                    'active': false
                 },
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'MAGNET Enterprise',
+                    link: 'https://example.com',
+                    'active': true
                 },
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'Sitelink3D',
+                    link: 'https://example.com',
+                    'active': false
                 },
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'Site Planner',
+                    link: 'https://example.com',
+                    'active': false
                 },
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'Collage',
+                    link: 'https://example.com',
+                    'active': false
                 }
             ]
         }, {
-            'active': true,
+            'active': false,
             'name': 'PRODUCTS AND SERVICES',
             'menu': [
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'Products and Subscriptions',
+                    link: 'https://example.com',
+                    'active': false
                 },
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'GPShield',
+                    link: 'https://example.com',
+                    'active': false
                 },
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'TSshield',
+                    link: 'https://example.com',
+                    'active': false
                 },
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'Firmware Updater Utility',
+                    link: 'https://example.com',
+                    'active': false
                 },
                 {
-                    name: 'Topnet Live',
-                    link: 'https://google.com'
+                    name: 'Support Cases',
+                    link: 'https://example.com',
+                    'active': false
                 }
             ]
         }

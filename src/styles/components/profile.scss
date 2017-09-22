@@ -4,16 +4,18 @@
 
     &::before {
         content: '';
+        z-index: $up-arrow-index;
+        display: none;
         position: absolute;
-        top: 0;
+        top: -5px;
         left: 0;
-        right: 0;
+        right: -93%;
         margin: 0 auto;
         width: 0;
         height: 0;
-        border-bottom: solid 50px $white;
-        border-right: solid 50px transparent;
-        border-left: solid 50px transparent;
+        border-bottom: solid 5px $white;
+        border-right: solid 5px transparent;
+        border-left: solid 5px transparent;
     }
 
     &__wrapper {
@@ -21,7 +23,7 @@
         right: 0;
         top: -500px;
         opacity: 0;
-        transition: .5s all ease;
+        transition: .5s opacity ease;
         position: fixed;
         background: $white;
         overflow: scroll;
@@ -47,6 +49,9 @@
     }
 
     .show-profile & {
+        &::before {
+          display: block;
+        }
         .profile__wrapper {
             @include drop-down-drawer();
         }

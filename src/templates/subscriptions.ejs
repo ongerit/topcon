@@ -2,33 +2,22 @@
     <div class="subscriptions__wrapper">
         <div class="subscriptions__grid">
             <p>Have an account? <a>Log in</a> for a full list of your Topcon apps and services here.</p>
-            <h3><%= this %></h3>
+            <h3><%= this.category %></h3>
         </div>
-        <div class="subscriptions__cat">
-            <%= this.category %>
-            <h4 class="subscriptions__menu subscriptions__active">myTopcon</h4>
-            <ul>
-            <% for(var i=0; i < this.subscriptions[0].menu.length; i++) {%>
-                <li><a ><%= this.subscriptions[0].menu[i].name %></li>
-            <% } %>
-                <li>Topnet Live</li>
-                <li>MAGNET Enterprise</li>
-                <li>Sitelink3D</li>
-                <li>Site Planner</li>
-                <li>Collage</li>
-            </ul>
-        </div>
-
-        <div class="subscriptions__cat">
-            <h4 class="subscriptions__menu">PRODUCTS AND SERVICES</h4>
-            <ul>
-                <li>Products &amp; Subscriptions</li>
-                <li>GPShield</li>
-                <li>TSshield</li>
-                <li>Firmware Updater Utility</li>
-                <li>Support Cases</li>
-            </ul>
-        </div>
+        <% for(var m=0; m<this.subscriptions.length; m++) { %>
+          <div class="subscriptions__cat">
+              <h4 class="subscriptions__menu <%= this.subscriptions[m].active ? 'subscriptions__active' : '' %>"><%= this.subscriptions[m].name %></h4>
+              <ul>
+                <% for(var i=0; i<this.subscriptions[m].menu.length; i++) { %>
+                    <li class="subscriptions__menu-list <%= this.subscriptions[m].menu[i].active ? 'subscriptions__active' : '' %>">
+                        <a href='<%= this.subscriptions[0].menu[i].link %>'>
+                            <%= this.subscriptions[m].menu[i].name %>
+                        </a>
+                    </li>
+                <% } %>
+              </ul>
+          </div>
+        <% } %>
     </div>
     <% include register-product %>
 </section>

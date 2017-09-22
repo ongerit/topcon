@@ -158,11 +158,12 @@
     }
 
     .show-profile & {
-        .menu__close {
-            display: block;
-        }
+        // [TO] change to remove close button
+        // .menu__close {
+        //     display: block;
+        // }
 
-        .menu__logged,
+        // .menu__logged,
         .menu__settings {
             display: none;
         }

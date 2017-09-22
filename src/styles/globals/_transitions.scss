@@ -6,6 +6,6 @@
 
 @mixin drop-down-drawer() {
     opacity: 1;
-    top: 0;
-    transition: .5s all ease;
+    top: inherit;
+    transition: .5s opacity ease;
 }
