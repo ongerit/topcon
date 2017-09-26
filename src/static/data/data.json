@@ -1,6 +1,4 @@
-// set up data here.
-// this can be nested multiple levels deep if necessary.
-var data = {
+{
     "category": "subscriptions",
     "subscriptions": [
         {
@@ -66,5 +64,3 @@ var data = {
         }
     ]
 }
-
-module.exports = data;

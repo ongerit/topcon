@@ -6,12 +6,12 @@
         </div>
         <% for(var m=0; m<this.subscriptions.length; m++) { %>
             <div class="subscriptions__cat">
-                <h4 class="subscriptions__menu <%= this.subscriptions[m].active ? 'subscriptions__active' : '' %>"><%= this.subscriptions[m].name %></h4>
+                <h4 class="subscriptions__menu <%= this.subscriptions[m].active ? 'subscriptions__active' : '' %>"><%= this.subscriptions[m].categoryLabel %></h4>
                 <ul>
                     <% for(var i=0; i<this.subscriptions[m].menu.length; i++) { %>
                         <li class="subscriptions__menu-list <%= this.subscriptions[m].menu[i].active ? 'subscriptions__active' : '' %>">
                             <a href='<%= this.subscriptions[0].menu[i].link %>'>
-                                <%= this.subscriptions[m].menu[i].name %>
+                                <%= this.subscriptions[m].menu[i].label %>
                             </a>
                         </li>
                         <% } %>

@@ -16,18 +16,9 @@
         position: fixed;
         overflow: scroll;
         max-width: 304px;
-        margin-bottom: 160px;
+        padding-bottom: 200px;
         width: 100%;
         height: 100vh;
-
-        &::after {
-            content: '';
-            background: $white;
-            height: 160px;
-            width: 304px;
-            position: absolute;
-            bottom: -160px;
-        }
 
         h3 {
             @extend %header-3;
