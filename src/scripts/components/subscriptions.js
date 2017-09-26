@@ -3,7 +3,6 @@ import $ from 'jquery';
 class Subscriptions {
     constructor(domElement) {
         this.$component = domElement;
-        this.$body = $('body');
         this.$subscriptionsWrapper = this.$component.find('.subscriptions__wrapper');
 
         // [TO] - Initialize functions
@@ -17,7 +16,6 @@ class Subscriptions {
     getMenuData() {
         const urlPath = '/static/data/data.json';
         const urlHref = document.location.href;
-        const dataArray = [];
 
         $.ajax({
             method: 'GET',
@@ -31,7 +29,7 @@ class Subscriptions {
             }
         });
     }
-    // PRIVATE METHODS
+
     _buildNewMenu(data) {
         this.$subscriptionsWrapper.empty();
         const html = `<div class="subscriptions__grid">
