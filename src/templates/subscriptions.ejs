@@ -8,7 +8,6 @@
             <div class="subscriptions__cat">
                 <h4 class="subscriptions__menu <%= this.subscriptions[m].active ? 'subscriptions__active' : '' %>"><%= this.subscriptions[m].categoryLabel %></h4>
                 <ul>
-
                     <% for(var i=0; i<this.subscriptions[m].menu.length; i++) { %>
                         <%if (this.subscriptions[m].menu[i].display) { %>
                             <li class="subscriptions__menu-list <%= this.subscriptions[m].menu[i].active ? 'subscriptions__active' : '' %>">
