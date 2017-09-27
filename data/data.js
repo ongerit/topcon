@@ -21,7 +21,7 @@ var data = {
                     "slug": "magnet-enterprise",
                     "link": "https://example.com",
                     "active": true,
-                    "display": false,
+                    "display": false
                 },
                 {
                     "label": "Site link 3D",
