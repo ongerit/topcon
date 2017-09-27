@@ -40,12 +40,11 @@ class Subscriptions {
                   <div class="subscriptions__cat">
                       <h4 class="subscriptions__menu ${item.active ? 'subscriptions__active' : ''}">${item.categoryLabel}</h4>
                       <ul>
-                          ${item.menu.map((menu) => {
-                              if (menu.display === false) {
-                                  console.log(menu.display);
-                              }
-                              return `<li class="subscriptions__menu-list ${menu.active ? 'subscriptions__active' : ''}"><a href='${menu.link}'> ${menu.label} </a></li>`;
-                          }).join('\n      ')}
+                          ${item.menu.map(menu => `${
+                                      menu.display === false
+                                      ? ''
+                                      : `<li class="subscriptions__menu-list ${menu.active ? 'subscriptions__active' : ''}"><a href='${menu.link}'> ${menu.label} </a></li>`}`
+                                  ).join('\n      ')}
                       </ul>
                   </div>
         `).join('\n      ')} `;
